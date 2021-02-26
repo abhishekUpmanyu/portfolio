@@ -62,11 +62,12 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
+    - family: Bangers
+      fonts:
+        - asset: fonts/Bangers-Regular.ttf
     - family: Oswald
       fonts:
         - asset: fonts/Oswald-VariableFont_wght.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
     - family: Nunito Sans
       fonts:
         - asset: fonts/NunitoSans-ExtraLight.ttf

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/utils/my_colors.dart';
 import 'package:portfolio/widgets/navbar.dart';
 import 'package:portfolio/widgets/typing_text.dart';
+import 'package:portfolio/widgets/what.dart';
 import 'package:portfolio/widgets/who.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -104,10 +105,8 @@ class _PortfolioHomeDesktopState extends State<PortfolioHomeDesktop> with Single
                   ],
                 ),
               ),
-              Who(
-                  offset: _scrollController.hasClients
-                      ? _scrollController.offset - mediaQuery.size.height
-                      : 0.0),
+              Who(),
+              What(),
               Container(
                 height: mediaQuery.size.height,
                 width: mediaQuery.size.width,
@@ -157,6 +156,33 @@ class _PortfolioHomeDesktopState extends State<PortfolioHomeDesktop> with Single
                         color: Colors.white)),
               ],
             ),
+          ),
+        ),
+        Positioned(
+          bottom: mediaQuery.size.height*0.5,
+          left: mediaQuery.size.width/6,
+          child: Stack(
+            children: [
+              Center(
+                child: Image.asset('assets/images/speech-bubble.png',
+                    width: mediaQuery.size.width / 6),
+              ),
+              Center(
+                child: Padding(
+                  padding: EdgeInsets.all(mediaQuery.size.width / 40),
+                  child: Text('Hi there,\naverage person \n\n\n',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        shadows: [
+                          Shadow(color: MyColors.color17, offset: Offset(2.0, 2.0))
+                        ],
+                        fontFamily: 'Bangers',
+                        fontSize: mediaQuery.size.width / 40,
+                        decoration: TextDecoration.none,
+                      )),
+                ),
+              )
+            ],
           ),
         ),
         _image == null
